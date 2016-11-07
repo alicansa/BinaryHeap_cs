@@ -1,6 +1,4 @@
-// Binary heap implementation using arrays
-// 
-//
+// Author : Alican Salor
 
 using System;
 using System.Collections;
@@ -11,7 +9,7 @@ namespace Dijkstra.Utils{
     public class BinaryHeap<T> : IEnumerable<T>, ICollection<T> where T : IComparable
     {
       
-        public List<T> Nodes {get;private set;} //nodes of the binary heap
+        public List<T> Nodes {get;private set;}
         public BinaryHeapType Type {get;set;}
         public BinaryHeap(){
             Type = BinaryHeapType.MIN;
@@ -123,11 +121,11 @@ namespace Dijkstra.Utils{
             //compare the added element with its parent; if they are in correct order stop
             //if not swap the element with its parent and return to the previous step
             int parentIndex = (childIndex-1)/2; //floored because its integer
-            T child; // the added item
+            T child;
             T parent;
             bool done=false;
             while(childIndex > 0 && !done){
-                child = this[childIndex]; // the added item
+                child = this[childIndex];
                 parent = this[parentIndex];
 
                 switch (this.Type){
